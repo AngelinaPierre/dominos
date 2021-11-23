@@ -17,16 +17,8 @@
 #include <stdio.h>
 
 #define NUMBER_tiles 28
-#define MAX_HAND 6
+#define MAX_HAND 7
 
-typedef struct tiles { // tiles = pedras
-    int left; // after ordenated top
-    int right;
-}tp_tiles;
-
-void view_tile(tp_tiles tile){
-    printf("[|%d|\n|%d|]",tile.left,tile.right);
-}
 
 
 

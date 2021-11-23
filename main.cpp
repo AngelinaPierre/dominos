@@ -28,7 +28,7 @@ int main(){
     tp_listade table,player_1, player_2;
     tp_pilha boneyard;
 
-
+    
 
 
 
