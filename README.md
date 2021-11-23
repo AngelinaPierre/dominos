@@ -13,10 +13,11 @@ Project for the discipline of Algorithms and Data Structures  1
 
 ### Using
 
-4) [git add .] -> adiciona as alterações para serem comentadas.
-5) [git commit -m "Comentario"] -> comenta as alterações para serem enviadas ao repositorio do github.
-6) [git pull] -> update your local repo before using.
-7) [git push] -> update github repo after working on it.
+4) [git status] -> vizualiza as alterações
+5) [git add .] -> adiciona as alterações para serem comentadas.
+6) [git commit -m "Comentario"] -> comenta as alterações para serem enviadas ao repositorio do github.
+7) [git pull] -> update your local repo before using.
+8) [git push] -> update github repo after working on it.
    
 
 
