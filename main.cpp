@@ -50,6 +50,7 @@ int main(){
 
     // tpi_monte e;
     gera_pecas(monte);
+    embaralha_pecas(monte);
     imprime_pilha(*monte);
     // pop(monte,&e);
     // printf("\\n\t\t|%d|",e);
