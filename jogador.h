@@ -1,5 +1,6 @@
-#ifndef DOMINO_H
-#define DOMINO_H
+#ifndef JOGADOR_H
+#define JOGADOR_H
+
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,9 +1,9 @@
 /**
- * @file C-template.cpp
+ * @file main.cpp
  * @author ANGELINA PIERRE (gaptp95@gmail.com)
- * @brief Main() for the Dominos promject of AED1
+ * @brief Domino game
  * @version 0.1
- * @date 2021-11-12
+ * @date 2021-11-03
  * 
  * @copyright Copyright (c) 2021
  * 
@@ -14,9 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "lista_de.h"
-#include "domino.h"
-#include "pilha.h"
+#include "monte.h"
 using namespace std;
 auto start = chrono::steady_clock::now();
 
@@ -25,10 +23,21 @@ int main(){
 
     printf("\n\n[==============|INI|==============]\n\n");
 
-    tp_listade table,player_1, player_2;
-    tp_pilha boneyard;
+    // int x; // switch op
+    tp_pilha *monte;
+    monte = inicializa_pilha();
+    push(monte,10);
+    push(monte,20);
+    push(monte,30);
 
-    
+    tpi_monte e;
+
+    pop(monte,&e);
+    printf("\\n\t\t|%d|",e);
+
+    push(monte,40);
+
+    destroi(monte);
 
 
 

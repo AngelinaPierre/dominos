@@ -1,11 +1,9 @@
-#ifndef DOMINO_H
-#define DOMINO_H
+#ifndef LISTASE_H
+#define LISTASE_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "peca.h"
-
-
 
 
 #endif
