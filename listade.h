@@ -37,6 +37,7 @@ tp_listade *inicializa_lde(){
     l = (tp_listade *)malloc(sizeof(tp_listade));
     l->ini = NULL;
     l->fim = NULL;
+    printf("\n|LDE_ALOC|\n");
     return l;
 }
 

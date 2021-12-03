@@ -15,7 +15,8 @@
 #include <stdio.h>
 #include <math.h>
 #include "monte.h"
-#include "listade.h"
+#include "player.h"
+
 using namespace std;
 auto start = chrono::steady_clock::now();
 
@@ -26,7 +27,11 @@ int main(){
     // int x; // switch op
     tp_pilha *monte;
     monte = inicializa_pilha();
-    
+
+    // INICIALIZANDO JOGADORES
+    tp_player *p1,*p2,*p3,*p4;
+    inicializa_players(p1,p2,p3,p4);
+
 
     // teste LDE PARA MAO
     // tp_listade *hand;
