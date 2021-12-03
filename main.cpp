@@ -33,7 +33,7 @@ int main(){
     insert_lde_fim(hand,20);
     insert_lde_fim(hand,30);
     imprime_listade(hand,1);
-    remove_listade(hand,20);
+    remove_listade(hand,10);
     imprime_listade(hand,1);
     destroi_listade(hand);
     

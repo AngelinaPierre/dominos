@@ -120,8 +120,8 @@ int remove_listade(tp_listade *l, tpi_hand e){
     }else{
         if(l->ini == atu){
             // 1 elelmento da lista - l=2
-            l->ini = atu->ant;
-            atu->ant->prox = NULL;
+            l->ini = atu->prox;
+            atu->prox->ant = NULL;
         }else{
             if(l->fim == atu){
                 // ultimo no da lista
@@ -134,7 +134,7 @@ int remove_listade(tp_listade *l, tpi_hand e){
         }
     }
     free(atu);
-    atu = NULL;
+    // atu = NULL;
     return 1;
 }
 
