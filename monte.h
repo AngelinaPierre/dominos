@@ -146,5 +146,47 @@ void gera_pecas(tp_pilha *monte){
 }
 
 
+void embaralha_pecas(tp_pilha *monte){
+    int x, i;
+    tp_pilha *aux1, *aux2, *aux3, *aux4;
+    aux1 = inicializa_pilha();
+    aux2 = inicializa_pilha();
+    aux3 = inicializa_pilha();
+    aux4 = inicializa_pilha();
+    tp_peca pa, pb, pc, pd, pe;
+
+    srand(time(NULL));
+
+    for (i = 0; i < 28; i++) {
+        x = rand() % 40;
+        pop(monte, &pa);
+        if(x < 10){
+			push(aux1, pa);
+		} else if((x > 10) && (x < 20) || (x == 10)){
+			push(aux2, pa);
+		} else if((x > 20) && (x < 30) || (x == 20)){
+			push(aux3, pa);
+		} else if((x > 30)|| (x == 30)){
+			push(aux4, pa);
+		}
+    }
+    while(!pilha_vazia(aux1)){
+		pop(aux1, &pb);
+		push(monte, pb);
+	}
+	while(!pilha_vazia(aux2)){
+		pop(aux2, &pc);
+		push(monte, pc);
+	}
+	while(!pilha_vazia(aux3)){
+		pop(aux3, &pd);
+		push(monte, pd);
+	}
+	while(!pilha_vazia(aux4)){
+		pop(aux4, &pe);
+		push(monte, pe);
+	}
+}
+
 
 #endif
