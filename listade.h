@@ -129,7 +129,7 @@ int remove_listade(tp_listade *l, tpi_hand e){
                 atu->ant->prox = NULL;
             }else{
                 atu->prox->ant = atu->ant;
-                atu->prox = atu->prox;
+                atu->ant->prox = atu->prox;
             }
         }
     }

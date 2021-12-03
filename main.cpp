@@ -26,22 +26,21 @@ int main(){
     // int x; // switch op
     tp_pilha *monte;
     monte = inicializa_pilha();
-    /*
-    tp_listade *hand;
-    hand = inicializa_lde();
-    insert_lde_fim(hand,10);
-    insert_lde_fim(hand,20);
-    insert_lde_fim(hand,30);
-    insert_lde_fim(hand,40);
-    imprime_listade(hand,1);
-    remove_listade(hand,20);
-    remove_listade(hand,30);
-    imprime_listade(hand,1);
-    destroi_listade(hand);
-    */
+    
 
     // teste LDE PARA MAO
-
+    // tp_listade *hand;
+    // hand = inicializa_lde();
+    // insert_lde_fim(hand,10);
+    // insert_lde_fim(hand,20);
+    // insert_lde_fim(hand,30);
+    // insert_lde_fim(hand,40);
+    // imprime_listade(hand,1);
+    // remove_listade(hand,20);
+    // remove_listade(hand,30);
+    // imprime_listade(hand,1);
+    // destroi_listade(hand);
+    
 
     // teste pilha
     // push(monte,10);
