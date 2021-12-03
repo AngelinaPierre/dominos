@@ -14,7 +14,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "monte.h"k
+#include "monte.h"
+#include "listade.h"
 using namespace std;
 auto start = chrono::steady_clock::now();
 
@@ -26,7 +27,21 @@ int main(){
     // int x; // switch op
     tp_pilha *monte;
     monte = inicializa_pilha();
+    tp_listade *hand;
+    hand = inicializa_lde();
+    insert_lde_fim(hand,10);
+    insert_lde_fim(hand,20);
+    insert_lde_fim(hand,30);
+    imprime_listade(hand,1);
+    remove_listade(hand,20);
+    imprime_listade(hand,1);
+    destroi_listade(hand);
     
+
+    // teste LDE PARA MAO
+
+
+    // teste pilha
     // push(monte,10);
     // push(monte,20);
     // push(monte,30);
