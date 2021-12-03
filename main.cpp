@@ -4,9 +4,9 @@
  * @brief Domino game
  * @version 0.1
  * @date 2021-11-03
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 #include <iostream>
 #include <chrono>
@@ -19,7 +19,6 @@
 using namespace std;
 auto start = chrono::steady_clock::now();
 
-
 int main(){
 
     printf("\n\n[==============|INI|==============]\n\n");
@@ -27,6 +26,7 @@ int main(){
     // int x; // switch op
     tp_pilha *monte;
     monte = inicializa_pilha();
+    /*
     tp_listade *hand;
     hand = inicializa_lde();
     insert_lde_fim(hand,10);
@@ -38,7 +38,7 @@ int main(){
     remove_listade(hand,30);
     imprime_listade(hand,1);
     destroi_listade(hand);
-    
+    */
 
     // teste LDE PARA MAO
 
@@ -49,7 +49,8 @@ int main(){
     // push(monte,30);
 
     // tpi_monte e;
-
+    gera_pecas(monte);
+    imprime_pilha(*monte);
     // pop(monte,&e);
     // printf("\\n\t\t|%d|",e);
 
