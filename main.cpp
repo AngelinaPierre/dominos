@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "monte.h"
+#include "monte.h"k
 using namespace std;
 auto start = chrono::steady_clock::now();
 
@@ -26,18 +26,19 @@ int main(){
     // int x; // switch op
     tp_pilha *monte;
     monte = inicializa_pilha();
-    push(monte,10);
-    push(monte,20);
-    push(monte,30);
+    
+    // push(monte,10);
+    // push(monte,20);
+    // push(monte,30);
 
-    tpi_monte e;
+    // tpi_monte e;
 
-    pop(monte,&e);
-    printf("\\n\t\t|%d|",e);
+    // pop(monte,&e);
+    // printf("\\n\t\t|%d|",e);
 
-    push(monte,40);
+    // push(monte,40);
 
-    destroi(monte);
+    // destroi(monte);
 
 
 
