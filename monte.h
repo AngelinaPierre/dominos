@@ -5,8 +5,10 @@
 #include <stdlib.h>
 #include "peca.h"
 
-// typedef tp_peca tpi_monte;
-typedef int tpi_monte;
+
+
+typedef tp_peca tpi_monte;
+//typedef int tpi_monte;
 
 typedef struct tp_no_aux{
     tpi_monte info;
@@ -46,7 +48,7 @@ tp_nop *aloca_no(){
 }
 
 // inserindo
-// mudar 
+// mudar
 
 int push(tp_pilha *p, tpi_monte e){
     tp_nop *novo_no;
@@ -71,12 +73,12 @@ int pop(tp_pilha *p, tpi_monte *e){
     }
     tp_nop *no_aux; // no que ira salvar o endereço do topo e depois ser deletado
     no_aux = p->topo;
-    
+
 
     *e = p->topo->info; // salva o valor da variavel retirada em e.
-    if(*e == p->topo->info){
+/*    if(*e == p->topo->info){
         printf("\n|work|\n");
-    }
+    }*/
     p->topo = p->topo->prox; // topo aponta para o anti-topo
 
     // desalocando o nó
@@ -88,7 +90,7 @@ int pop(tp_pilha *p, tpi_monte *e){
 
 tp_pilha *destroi(tp_pilha *p){
     tpi_monte e;
-    
+
     while(!pilha_vazia(p)){
         pop(p,&e);
     }
@@ -97,5 +99,30 @@ tp_pilha *destroi(tp_pilha *p){
     return NULL;
 }
 
+void imprime_pilha(tp_pilha p){
+	tpi_monte e;
+	printf("\n");
+	while (!pilha_vazia(&p)){
+		pop(&p,&e);
+        //printf("%d\n", e);
+		printf("%d ", e.ld2);
+		printf("%d \n", e.ld1);
+	}
+}
+
+void gera_pecas(tp_pilha *monte){
+    tp_peca peca;
+    int j, i, soma;
+    for (i = 0; i < 7; i++) {
+        for (j = 0; j < 7; j++) {
+            if(j >= i){
+            soma = i + j;
+            peca.ld1 = j;
+            peca.ld2 = i;
+            push(monte, peca);
+            }
+        }
+    }
+}
 
 #endif
