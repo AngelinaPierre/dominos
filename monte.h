@@ -10,6 +10,11 @@
 typedef tp_peca tpi_monte;
 //typedef int tpi_monte;
 
+/**
+ * @brief FUNÇÕES ESTRUTURA DE PILHA IMPLEMENTADA POR LISTA ENCADEDA
+ * 
+ */
+
 typedef struct tp_no_aux{
     tpi_monte info;
     struct tp_no_aux *prox;
@@ -109,6 +114,12 @@ void imprime_pilha(tp_pilha p){
 		printf("%d \n", e.ld1);
 	}
 }
+
+/**
+ * @brief FUNÇÕES PARA JOGO
+ * 
+ * @param monte 
+ */
 
 void gera_pecas(tp_pilha *monte){
     tp_peca peca;
