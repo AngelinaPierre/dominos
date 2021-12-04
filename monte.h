@@ -105,6 +105,8 @@ tp_pilha *destroi(tp_pilha *p){
     return NULL;
 }
 
+//  impressão bugada
+
 void imprime_pilha(tp_pilha p){
 	tpi_monte e;
 	printf("\n");
@@ -114,6 +116,9 @@ void imprime_pilha(tp_pilha p){
 		printf("%d ", e.ld2);
 		printf("%d \n", e.ld1);
 	}
+    if(pilha_vazia(&p)){
+        printf("\n|EMPTY|\n");
+    }
 }
 
 

@@ -107,7 +107,7 @@ void imprime_listade(tp_listade *l, int op){
 
 int tamanho_listade(tp_listade *l){
     tp_noh *atu;
-    int tam;
+    int tam=0;
     atu = l->ini;
     while(atu!= NULL){
         atu= atu->prox;
