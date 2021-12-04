@@ -16,6 +16,7 @@
 #include <math.h>
 #include "monte.h"
 #include "player.h"
+#include "domino.h"
 
 using namespace std;
 auto start = chrono::steady_clock::now();
@@ -46,8 +47,8 @@ int main(){
     gera_pecas(monte);
     embaralha_pecas(monte);
     imprime_pilha(*monte);
-    
-
+    pega_pecas(monte);
+    // imprime_pilha(*monte);
 
 
     printf("\n\n[==============|FIM|==============]\n\n");
