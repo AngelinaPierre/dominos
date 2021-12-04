@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "peca.h"
-#include "pedra_lde_mao.h"
+#include "pedra_lde_m.h"
+// #include "monte.h"
 
 
 
@@ -42,5 +43,22 @@ tp_player *inicializa_players(){
 
     return p1;
 }
+// terminar função para pegar na peca
+// void pegar_pedra(tp_player *player, tp_peca peca){
+// 	tp_noh *novo, *atu;
+// 	novo->info = peca;
+// 	if(empty_lde(player->hand)){
+// 		novo->prox = NULL;
+//         novo->ant = NULL;
+//         player->hand->ini = player->hand->fim = novo;
+// 	}else{
+// 		atu = player->hand->ini;
+// 		while(){
+//         	atu = atu->prox;
+//     	}
+// 	}
+	
+	
+// }
 
 #endif

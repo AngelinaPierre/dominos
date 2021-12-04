@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef PEDRA_LDE_MAO_H
-#define PEDRA_LDE_MAO_H
+#ifndef PEDRA_LDE_M_H
+#define PEDRA_LDE_M_H
 
 #include <stdio.h>
 #include <stdlib.h>

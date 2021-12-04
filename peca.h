@@ -21,6 +21,8 @@ int soma_peca(tp_peca p){
     return p.ld1 + p.ld2;
 }
 
+#include "monte.h"
+#include "pedra_lde_m.h"
 
 
 
