@@ -89,7 +89,7 @@ void imprime_listade(tp_listade *l, int op){
         case 1:
             atu = l->ini;
             while(atu!= NULL){
-                printf("|%d|\t",atu->info);
+                printf("|%d|%d|\t",atu->info.ld1,atu->info.ld2);
                 atu= atu->prox;
             }
             break;

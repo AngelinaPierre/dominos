@@ -47,8 +47,10 @@ int main(){
     gera_pecas(monte);
     embaralha_pecas(monte);
     imprime_pilha(*monte);
-    pega_pecas(monte);
-    // imprime_pilha(*monte);
+    pega_pecas(monte,p1,p2,p3,p4);
+    imprime_pilha(*monte);
+
+    imprime_listade(p1->hand,1);
 
 
     printf("\n\n[==============|FIM|==============]\n\n");
