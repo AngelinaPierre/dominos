@@ -19,25 +19,9 @@ Project for the discipline of Algorithms and Data Structures  1
 7) [git pull] -> update your local repo before using.
 8) [git push] -> update github repo after working on it.
    
-## DEV IMAGES
 
-![image 1]('./Docs/img/1.PNG')
 
-![image 2]('./Docs/img/2.PNG')
 
-![image 3]('./Docs/img/1.PNG')
-
-![image 4]('./Docs/img/1.PNG')
-
-![image 5]('./Docs/img/1.PNG')
-
-![image 6]('./Docs/img/1.PNG')
-
-![image 7]('./Docs/img/1.PNG')
-
-![image 8]('./Docs/img/1.PNG')
-
-![image 9]('./Docs/img/1.PNG')
 
 
 
