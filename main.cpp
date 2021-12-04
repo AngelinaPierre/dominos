@@ -21,6 +21,8 @@
 using namespace std;
 auto start = chrono::steady_clock::now();
 
+
+
 int main(){
 
     printf("\n\n[==============|INI|==============]\n\n");
@@ -42,7 +44,7 @@ int main(){
     printf("\nPLAYER 3  = |%s",p3->name);
     printf("\nPLAYER 4  = |%s",p4->name);
 
-
+    
     
     gera_pecas(monte);
     embaralha_pecas(monte);
@@ -50,7 +52,11 @@ int main(){
     pega_pecas(monte,p1,p2,p3,p4);
     imprime_pilha(*monte);
 
+    qtd_pecas(p1,p2,p3,p4);
+
     imprime_listade(p1->hand,1);
+    
+
 
 
     printf("\n\n[==============|FIM|==============]\n\n");
