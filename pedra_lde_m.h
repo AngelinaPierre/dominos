@@ -150,14 +150,17 @@ int tamanho_listade(tp_listade *l){
 //     return 1;
 // }
 
-// tp_noh *busca_listade(tp_listade *l, tpi_hand e){
-//     tp_noh *atu;
-//     atu = l->ini;
-//     while((atu!=NULL)&&(atu->info != e)){
-//         atu = atu->prox;
-//     }
-//     return atu;
-// }
+int busca_lista_pc(tp_listade *lista, int e, int a){
+    tp_noh *atu;
+    int cont = 0;
+    atu = lista->ini;
+    while((atu!=NULL) && ((atu->info.ld1 != e) || (atu->info.ld2 != a))){
+        atu = atu->prox;
+        cont++;
+    }
+    return cont;
+}
+
 
 // Retira da memoria todos os nós da lista e também o descritor.
 tp_listade *destroi_listade(tp_listade *l){

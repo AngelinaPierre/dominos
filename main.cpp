@@ -54,7 +54,7 @@ int main(){
     
     pega_pecas(monte,p1,p2,p3,p4);
 
-    // qtd_pecas(p1,p2,p3,p4);
+    qtd_pecas(p1,p2,p3,p4);
 
     imprime_listade(p1->hand,1);
     imprime_listade(p2->hand,1);

@@ -56,4 +56,26 @@ void qtd_pecas(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){ //ta
 	printf("\n");
 }
 
+//criar ordenação da mão por soma
+
+// void ordena_pecas(tp_player *p){
+// 	tp_peca aux;
+//     tp_peca x,y;
+    
+// }
+
+int ordem_jogo(tp_player p1, tp_player p2, tp_player p3, tp_player p4){ //Busca lista
+	int jog1, jog2, jog3, jog4;
+	
+	jog1 = busca_lista_pc(p1.hand, 5,5);
+	jog2 = busca_lista_pc(p2.hand, 5,5);
+	jog3 = busca_lista_pc(p3.hand, 5,5);
+	jog4 = busca_lista_pc(p4.hand, 5,5);
+	
+	if(jog1 != 7) return 1;
+	if(jog2 != 7) return 2;
+	if(jog3 != 7) return 3;
+	if(jog4 != 7) return 4;
+}
+
 #endif
