@@ -7,6 +7,8 @@
 #include "peca.h"
 #include "listade.h"
 
+
+
 typedef struct{
     char *name; // ou vetor se não cosneguir fazer alocação dinamica
     tp_listade *hand;
@@ -14,23 +16,24 @@ typedef struct{
 
 // função para iniciar a mão quando for pegar a peça no monte
 
-
-
-int inicializa_players(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){
-    // alocando os jogadores
-    p1 = (tp_player *)malloc(sizeof(tp_player));
-    p2 = (tp_player *)malloc(sizeof(tp_player));
-    p3 = (tp_player *)malloc(sizeof(tp_player));
-    p4 = (tp_player *)malloc(sizeof(tp_player));
-    if((p1 || p2 || p3|| p4) == NULL){
-        return 0;
+tp_player *aloca_player(){
+    tp_player *novo_player;
+    novo_player = (tp_player *)malloc(sizeof(tp_player));
+    if(novo_player == NULL){
+        printf("\n|PLAYERS NOT ALLOCATED|\n");
     }
+    novo_player->name = (char *)malloc(sizeof(char));
+    novo_player->hand = inicializa_lde();
+    return novo_player;
+}
 
-    // alocando os players
-    p1->name = (char*)malloc(sizeof(char));
-    p2->name = (char*)malloc(sizeof(char));
-    p3->name = (char*)malloc(sizeof(char));
-    p4->name = (char*)malloc(sizeof(char));
+
+tp_player *inicializa_players(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){
+    // alocando os jogadores
+    p1 = aloca_player();
+    p2 = aloca_player();
+    p3 = aloca_player();
+    p4 = aloca_player();
 
     printf("DIGITE NOME PLAYER 1: ");
     scanf("%[^\n]s",p1->name);
@@ -50,13 +53,7 @@ int inicializa_players(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p
     printf("\n|PLAYER 2| = |%s|",p2->name);
     printf("\n|PLAYER 3| = |%s|",p3->name);
     printf("\n|PLAYER 4| = |%s|",p4->name);
-
-    // inicializando a mão do jogador com lista dupla.
-    p1->hand = inicializa_lde();
-    p2->hand = inicializa_lde();
-    p3->hand = inicializa_lde();
-    p4->hand = inicializa_lde();
-    return 1;
+    return p1,p2,p3,p4;
 }
 
 #endif

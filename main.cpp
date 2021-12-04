@@ -30,7 +30,17 @@ int main(){
 
     // INICIALIZANDO JOGADORES
     tp_player *p1,*p2,*p3,*p4;
+    // pp1 = &p1;
+    // pp2 = &p2;
+    // pp3 = &p3;
+    // pp4 = &p4;
+
     inicializa_players(p1,p2,p3,p4);
+
+    printf("PLAYER 1  = |%s",p1->name);
+    printf("PLAYER 2  = |%s",p2->name);
+    printf("PLAYER 3  = |%s",p2->name);
+    printf("PLAYER 4  = |%s",p4->name);
 
 
     // teste LDE PARA MAO
