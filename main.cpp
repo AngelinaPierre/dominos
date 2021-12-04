@@ -17,6 +17,8 @@
 #include "monte.h"
 #include "player.h"
 #include "domino.h"
+#include "mesa.h"
+#include "peca.h" //temporario
 
 using namespace std;
 auto start = chrono::steady_clock::now();
@@ -32,10 +34,12 @@ int main(){
     // INICIALIZANDO JOGADORES
     tp_player *p1,*p2,*p3,*p4;
 
+    tp_mesa *m;
     p1 = inicializa_players();
     p2 = inicializa_players();
     p3 = inicializa_players();
     p4 = inicializa_players();
+    m = inicializa_mesa();
 
     printf("\nPLAYER 1  = |%s",p1->name);
     printf("\nPLAYER 2  = |%s",p2->name);
@@ -43,14 +47,25 @@ int main(){
     printf("\nPLAYER 4  = |%s",p4->name);
 
 
-    
+/*
     gera_pecas(monte);
     embaralha_pecas(monte);
     imprime_pilha(*monte);
-    pega_pecas(monte,p1,p2,p3,p4);
-    imprime_pilha(*monte);
+    pega_pecas(monte);
+*/
+    printf("\n");
+    tp_peca x, y, z;
+    x.ld1 = 0;
+    x.ld2 = 0;
+    y.ld1 = 0;
+    y.ld2 = 1;
+    z.ld1 = 0;
+    z.ld2 = 2;
 
-    imprime_listade(p1->hand,1);
+    insert_lde_fim(m->mesa, y);
+    insert_lde_fim(m->mesa, x);
+    insert_lde_fim(m->mesa, z);
+    imprime_listade(m->mesa, 1);
 
 
     printf("\n\n[==============|FIM|==============]\n\n");
