@@ -23,6 +23,8 @@
 using namespace std;
 auto start = chrono::steady_clock::now();
 
+
+
 int main(){
 
     printf("\n\n[==============|INI|==============]\n\n");
@@ -47,12 +49,16 @@ int main(){
     printf("\nPLAYER 4  = |%s",p4->name);
 
 
-/*
+
     gera_pecas(monte);
     embaralha_pecas(monte);
     imprime_pilha(*monte);
     pega_pecas(monte);
-*/
+
+    qtd_pecas(p1,p2,p3,p4);
+
+    imprime_listade(p1->hand,1);
+
     printf("\n");
     tp_peca x, y, z;
     x.ld1 = 0;
@@ -66,6 +72,8 @@ int main(){
     insert_lde_fim(m->mesa, x);
     insert_lde_fim(m->mesa, z);
     imprime_listade(m->mesa, 1);
+
+
 
 
     printf("\n\n[==============|FIM|==============]\n\n");

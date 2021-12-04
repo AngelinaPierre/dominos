@@ -8,9 +8,9 @@
 #include "player.h"
 
 
-// terminar função para pegar na peca
+// terminar função para pegar na peca -> fazer com 1 jogador por x
 
-void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){ 
+void pega_pecas(tp_pilha *monte, tp_player *p1,tp_player *p2,tp_player *p3,tp_player *p4){ 
 	// Inserir_na_lista
 	int i;
 	tp_peca a;

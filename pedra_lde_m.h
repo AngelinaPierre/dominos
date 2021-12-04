@@ -105,6 +105,17 @@ void imprime_listade(tp_listade *l, int op){
     printf("\n");
 }
 
+int tamanho_listade(tp_listade *l){
+    tp_noh *atu;
+    int tam;
+    atu = l->ini;
+    while(atu!= NULL){
+        atu= atu->prox;
+        tam++;
+    }
+    return tam;
+}
+
 // removendo da lista -> com base no conteudo.
 // int remove_listade(tp_listade *l, tpi_hand e){
 //     tp_noh *atu;
