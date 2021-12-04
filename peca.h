@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "monte.h"
+// #include "monte.h"
 
 typedef struct{
     int ld1,ld2;

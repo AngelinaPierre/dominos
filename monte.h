@@ -119,11 +119,6 @@ void imprime_pilha(tp_pilha p){
 
 
 
-
-
-
-
-
 /**
  * @brief FUNÇÕES PARA JOGO
  * 
