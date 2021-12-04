@@ -9,15 +9,15 @@
  * 
  */
 
-#ifndef LISTADE_H
-#define LISTADE_H
+#ifndef PEDRA_LDE_MAO_H
+#define PEDRA_LDE_MAO_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "peca.h"
 
-// typedef tp_peca tpi_hand;
-typedef int tpi_hand;
+typedef tp_peca tpi_hand;
+// typedef int tpi_hand;
 
 
 // Estrutura do nó que será inserido na mão
@@ -106,47 +106,47 @@ void imprime_listade(tp_listade *l, int op){
 }
 
 // removendo da lista -> com base no conteudo.
-int remove_listade(tp_listade *l, tpi_hand e){
-    tp_noh *atu;
-    atu = l->ini;
-    while((atu!=NULL) && (atu->info != e)){
-        atu = atu->prox; // procurando na lista
-    }
-    if(atu == NULL){
-        return 0; // não encontrado
-    }
-    if(l->ini == l->fim){
-        // unico elemento na lista
-        l->ini = l->fim = NULL;
-    }else{
-        if(l->ini == atu){
-            // 1 elelmento da lista - l=2
-            l->ini = atu->prox;
-            atu->prox->ant = NULL;
-        }else{
-            if(l->fim == atu){
-                // ultimo no da lista
-                l->fim = atu->ant;
-                atu->ant->prox = NULL;
-            }else{
-                atu->prox->ant = atu->ant;
-                atu->ant->prox = atu->prox;
-            }
-        }
-    }
-    free(atu);
-    // atu = NULL;
-    return 1;
-}
+// int remove_listade(tp_listade *l, tpi_hand e){
+//     tp_noh *atu;
+//     atu = l->ini;
+//     while((atu!=NULL) && (atu->info != e)){
+//         atu = atu->prox; // procurando na lista
+//     }
+//     if(atu == NULL){
+//         return 0; // não encontrado
+//     }
+//     if(l->ini == l->fim){
+//         // unico elemento na lista
+//         l->ini = l->fim = NULL;
+//     }else{
+//         if(l->ini == atu){
+//             // 1 elelmento da lista - l=2
+//             l->ini = atu->prox;
+//             atu->prox->ant = NULL;
+//         }else{
+//             if(l->fim == atu){
+//                 // ultimo no da lista
+//                 l->fim = atu->ant;
+//                 atu->ant->prox = NULL;
+//             }else{
+//                 atu->prox->ant = atu->ant;
+//                 atu->ant->prox = atu->prox;
+//             }
+//         }
+//     }
+//     free(atu);
+//     // atu = NULL;
+//     return 1;
+// }
 
-tp_noh *busca_listade(tp_listade *l, tpi_hand e){
-    tp_noh *atu;
-    atu = l->ini;
-    while((atu!=NULL)&&(atu->info != e)){
-        atu = atu->prox;
-    }
-    return atu;
-}
+// tp_noh *busca_listade(tp_listade *l, tpi_hand e){
+//     tp_noh *atu;
+//     atu = l->ini;
+//     while((atu!=NULL)&&(atu->info != e)){
+//         atu = atu->prox;
+//     }
+//     return atu;
+// }
 
 // Retira da memoria todos os nós da lista e também o descritor.
 tp_listade *destroi_listade(tp_listade *l){
