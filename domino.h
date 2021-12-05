@@ -60,24 +60,91 @@ void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp
     }
 }
 
-void escolha_pecaini(tp_mesa *mesa, tp_player *jog){ //Verificar quina
-    int p, i;
+void escolha_peca(tp_mesa *mesa, tp_player *jog){ //Verificar quina
+	char lado, passa;
+	int p, i, fl, laux;
     tpi_hand e;
     tp_noh *atu;
 
-    while(1){
-        printf("\n");
-        atu = jog->hand->ini;
-        printf("\nEscolha uma peca: ");
-        scanf("%d",&p);
-        for(i = 0; i < p-1; i++){
-            atu = atu->prox;
-        }
-        if((atu->info.ld1 == 5) && (atu->info.ld2 == 5)){
-            insert_lde_fim (mesa->mesa, atu->info);
-            break;
-        }
-    }
+	if (empty_lde(mesa->mesa)){
+		while(1){
+	        printf("\n");
+	        atu = jog->hand->ini;
+	        printf("\nEscolha uma peca: ");
+	        scanf("%d",&p);
+	        for(i = 0; i < p-1; i++){
+	            atu = atu->prox;
+	        }
+	        if((atu->info.ld1 == 5) && (atu->info.ld2 == 5)){
+	            insert_lde_fim (mesa->mesa, atu->info);
+				remove_listade(jog->hand, atu->info);
+				break;
+	        }
+	    }
+	}
+	else{
+		while(fl != 1){
+			fl = 0;
+			//imprime_listade(jog->hand,1);
+			//imprime_listade(mesa->mesa, 1);
+			printf("\n");
+	        atu = jog->hand->ini;
+			printf("\nDeseja passar?: ");
+			scanf(" %c",&passa);
+
+			if(passa == 's') return;
+
+			printf("\nEscolha uma peca: ");
+	        scanf("%d",&p);
+	        for(i = 0; i < p-1; i++){
+	            atu = atu->prox;
+	        }
+			printf("\nEscolha um lado: ");
+			scanf(" %c",&lado);
+			switch (lado) {
+				case 'e':
+					if(atu->info.ld2 == mesa->mesa->ini->info.ld1){
+						insert_lde_inicio (mesa->mesa, atu->info);
+						remove_listade(jog->hand, atu->info);
+						fl = 1;
+						break;
+					}
+					else if(atu->info.ld1 == mesa->mesa->ini->info.ld1){
+						laux = atu->info.ld2;
+						atu->info.ld2 = atu->info.ld1;
+						atu->info.ld1 = laux;
+						insert_lde_inicio (mesa->mesa, atu->info);
+						remove_listade(jog->hand, atu->info);
+						fl = 1;
+						break;
+					}
+					else{
+						printf("Nao tem onde jogar a peca\n");
+					}
+				case 'd':
+					if(atu->info.ld1 == mesa->mesa->fim->info.ld2){
+						insert_lde_fim (mesa->mesa, atu->info);
+						remove_listade(jog->hand, atu->info);
+						fl = 1;
+						break;
+					}
+					else if(atu->info.ld2 == mesa->mesa->fim->info.ld2){
+						laux = atu->info.ld2;
+						atu->info.ld2 = atu->info.ld1;
+						atu->info.ld1 = laux;
+						insert_lde_fim (mesa->mesa, atu->info);
+						remove_listade(jog->hand, atu->info);
+						fl = 1;
+						break;
+					}
+					else{
+						printf("Nao tem onde jogar a peca\n");
+					}
+				default: printf("Lado invalido\n");
+			}
+		}
+	}
 }
+
 
 #endif

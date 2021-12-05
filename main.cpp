@@ -18,7 +18,6 @@
 #include "player.h"
 #include "domino.h"
 #include "mesa.h"
-#include "peca.h" //temporario
 
 using namespace std;
 auto start = chrono::steady_clock::now();
@@ -48,8 +47,6 @@ int main(){
     printf("\nPLAYER 3  = |%s",p3->name);
     printf("\nPLAYER 4  = |%s",p4->name);
 
-
-
     gera_pecas(monte);
     embaralha_pecas(monte);
 
@@ -58,55 +55,56 @@ int main(){
     qtd_pecas(p1,p2,p3,p4);
 
     imprime_listade(p1->hand,1);
+    imprime_listade(p2->hand,1);
+    imprime_listade(p3->hand,1);
+    imprime_listade(p4->hand,1);
 
     switch(ordem_jogo(*p1, *p2, *p3, *p4)){
     	case 1:
-    		escolha_pecaini(m, p1);
+    		escolha_peca(m, p1);
     		break;
     	case 2:
-    		escolha_pecaini(m, p2);
+    		escolha_peca(m, p2);
     		break;
     	case 3:
-    		escolha_pecaini(m, p3);
+    		escolha_peca(m, p3);
     		break;
     	case 4:
-    		escolha_pecaini(m, p4);
+    		escolha_peca(m, p4);
     		break;
 	}
-
-//    escolha_pecaini(m, p1);
+    int cont=0;
     printf("\n");
     imprime_listade(m->mesa, 1);
-/*
     printf("\n");
-    tp_peca x, y, z;
-    x.ld1 = 0;
-    x.ld2 = 0;
-    y.ld1 = 0;
-    y.ld2 = 1;
-    z.ld1 = 0;
-    z.ld2 = 2;
-
-
-
-    insert_lde_fim(m->mesa, x);
-
-    if(y.ld2 != x.ld1){
-        int aux;
-        aux = y.ld2;
-        y.ld2 = y.ld1;
-        y.ld1 = aux;
+    while (1) {
+        system("cls");
+        printf("%d\n", cont);
+        imprime_listade(p1->hand,1);
+        printf("jog 1\n");
+        imprime_listade(m->mesa, 1);
+        printf("mesa\n");
+        escolha_peca(m, p1);
+        system("cls");
+        imprime_listade(p2->hand,1);
+        printf("jog 2\n");
+        imprime_listade(m->mesa, 1);
+        printf("mesa\n");
+        escolha_peca(m, p2);
+        system("cls");
+        imprime_listade(p3->hand,1);
+        printf("jog 3\n");
+        imprime_listade(m->mesa, 1);
+        printf("mesa\n");
+        escolha_peca(m, p3);
+        system("cls");
+        imprime_listade(p4->hand,1);
+        printf("jog 4\n");
+        imprime_listade(m->mesa, 1);
+        printf("mesa\n");
+        escolha_peca(m, p4);
+        cont++;
     }
-
-   insert_lde_inicio(m->mesa, y);
-    //printf("\n |%d|%d| ", m->mesa->ini->info.ld1, m->mesa->ini->info.ld1);
-    //printf("|%d|%d|\n", m->mesa->fim->info.ld1, m->mesa->fim->info.ld2);
-    insert_lde_fim(m->mesa, z);
-    imprime_listade(m->mesa, 1);
-    printf("\n|%d|%d| ", m->mesa->ini->info.ld1, m->mesa->ini->info.ld2);
-    printf("|%d|%d|\n", m->mesa->fim->info.ld1, m->mesa->fim->info.ld2);
-
-*/
 
     printf("\n\n[==============|FIM|==============]\n\n");
     cout << "\n";

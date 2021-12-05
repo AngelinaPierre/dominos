@@ -136,38 +136,38 @@ int tamanho_listade(tp_listade *l){
 }
 
 // removendo da lista -> com base no conteudo.
-// int remove_listade(tp_listade *l, tpi_hand e){
-//     tp_noh *atu;
-//     atu = l->ini;
-//     while((atu!=NULL) && (atu->info != e)){
-//         atu = atu->prox; // procurando na lista
-//     }
-//     if(atu == NULL){
-//         return 0; // não encontrado
-//     }
-//     if(l->ini == l->fim){
-//         // unico elemento na lista
-//         l->ini = l->fim = NULL;
-//     }else{
-//         if(l->ini == atu){
-//             // 1 elelmento da lista - l=2
-//             l->ini = atu->prox;
-//             atu->prox->ant = NULL;
-//         }else{
-//             if(l->fim == atu){
-//                 // ultimo no da lista
-//                 l->fim = atu->ant;
-//                 atu->ant->prox = NULL;
-//             }else{
-//                 atu->prox->ant = atu->ant;
-//                 atu->ant->prox = atu->prox;
-//             }
-//         }
-//     }
-//     free(atu);
-//     // atu = NULL;
-//     return 1;
-// }
+ int remove_listade(tp_listade *l, tpi_hand e){
+    tp_noh *atu;
+    atu = l->ini;
+    while((atu != NULL) && ((atu->info.ld1 != e.ld1) || (atu->info.ld2 != e.ld2))){
+        atu = atu->prox; // procurando na lista
+     }
+    if(atu == NULL){
+         return 0; // nÃ£o encontrado
+     }
+     if(l->ini == l->fim){
+         // unico elemento na lista
+         l->ini = l->fim = NULL;
+     }else{
+         if(l->ini == atu){
+             // 1 elelmento da lista - l=2
+             l->ini = atu->prox;
+             atu->prox->ant = NULL;
+         }else{
+             if(l->fim == atu){
+                 // ultimo no da lista
+                 l->fim = atu->ant;
+                 atu->ant->prox = NULL;
+             }else{
+                 atu->prox->ant = atu->ant;
+                 atu->ant->prox = atu->prox;
+             }
+         }
+     }
+     free(atu);
+     atu = NULL;
+     return 1;
+}
 
 int busca_lista_pc(tp_listade *lista, int e, int a){
     tp_noh *atu;
