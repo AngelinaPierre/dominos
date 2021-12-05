@@ -43,26 +43,55 @@ int main(){
     p4 = inicializa_players();
     m = inicializa_mesa();
 
-    printf("\nPLAYER 1  = |%s|",p1->name);
-    printf("\nPLAYER 2  = |%s|",p2->name);
-    printf("\nPLAYER 3  = |%s|",p3->name);
-    printf("\nPLAYER 4  = |%s|\n\n",p4->name);
+    printf("\nPLAYER 1  = |%s",p1->name);
+    printf("\nPLAYER 2  = |%s",p2->name);
+    printf("\nPLAYER 3  = |%s",p3->name);
+    printf("\nPLAYER 4  = |%s",p4->name);
+
 
 
     gera_pecas(monte);
     embaralha_pecas(monte);
-    
+
     pega_pecas(monte,p1,p2,p3,p4);
 
     qtd_pecas(p1,p2,p3,p4);
 
     imprime_listade(p1->hand,1);
-    imprime_listade(p2->hand,1);
-    imprime_listade(p3->hand,1);
-    imprime_listade(p4->hand,1);
 
-    
+    escolha_pecaini(m, p1);
+    printf("\n deu certo \n");
+    imprime_listade(m->mesa, 1);
+/*
+    printf("\n");
+    tp_peca x, y, z;
+    x.ld1 = 0;
+    x.ld2 = 0;
+    y.ld1 = 0;
+    y.ld2 = 1;
+    z.ld1 = 0;
+    z.ld2 = 2;
 
+
+
+    insert_lde_fim(m->mesa, x);
+
+    if(y.ld2 != x.ld1){
+        int aux;
+        aux = y.ld2;
+        y.ld2 = y.ld1;
+        y.ld1 = aux;
+    }
+
+   insert_lde_inicio(m->mesa, y);
+    //printf("\n |%d|%d| ", m->mesa->ini->info.ld1, m->mesa->ini->info.ld1);
+    //printf("|%d|%d|\n", m->mesa->fim->info.ld1, m->mesa->fim->info.ld2);
+    insert_lde_fim(m->mesa, z);
+    imprime_listade(m->mesa, 1);
+    printf("\n|%d|%d| ", m->mesa->ini->info.ld1, m->mesa->ini->info.ld2);
+    printf("|%d|%d|\n", m->mesa->fim->info.ld1, m->mesa->fim->info.ld2);
+
+*/
 
     printf("\n\n[==============|FIM|==============]\n\n");
     cout << "\n";

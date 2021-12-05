@@ -4,9 +4,9 @@
  * @brief Biblioteca de lSE para a MÃO do jogador
  * @version 0.1
  * @date 2021-12-02
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #ifndef PEDRA_LDE_M_H
@@ -57,6 +57,25 @@ tp_noh *aloca_ndeh(){ // ndeh = no duplamente encadeado mao
     return pt;
 }
 
+// inserindo nó no incio
+int insert_lde_inicio (tp_listade *l, tpi_hand e){
+    tp_noh *novo_no;
+    novo_no = aloca_ndeh();
+    if(!novo_no){
+        return 0;;
+    }
+    novo_no->info = e;
+    if(empty_lde(l)){
+        // primeiro nó
+        l->ini = novo_no;
+        l->fim = novo_no;
+    }else{
+        novo_no->prox = l->ini;
+        l->ini->ant = novo_no;
+        l->ini = novo_no;
+    }
+    return 1;
+}
 
 // inserindo nó no fim
 int insert_lde_fim (tp_listade *l, tpi_hand e){

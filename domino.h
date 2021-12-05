@@ -10,7 +10,7 @@
 
 // terminar função para pegar na peca -> fazer com 1 jogador por x
 
-// void pega_pecas(tp_pilha *monte, tp_player *p1,tp_player *p2,tp_player *p3,tp_player *p4){ 
+// void pega_pecas(tp_pilha *monte, tp_player *p1,tp_player *p2,tp_player *p3,tp_player *p4){
 // 	// Inserir_na_lista
 // 	int i;
 // 	tp_peca a;
@@ -32,7 +32,7 @@
 // 	// }
 // }
 
-void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){ 
+void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){
 	// Inserir_na_lista
 	int i;
 	tp_peca a, b, c, d;
@@ -57,6 +57,26 @@ void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp
             printf("INSERT_P4 -> |%d|%d|\n",d.ld1,d.ld2);
 		    insert_lde_fim (p4->hand, d);
 	    }
+    }
+}
+
+void escolha_pecaini(tp_mesa *mesa, tp_player *jog){ //Verificar quina
+    int p, i;
+    tpi_hand e;
+    tp_noh *atu;
+
+    while(1){
+        printf("\n");
+        atu = jog->hand->ini;
+        printf("\nEscolha uma peca: ");
+        scanf("%d",&p);
+        for(i = 0; i < p; i++){
+            atu = atu->prox;
+        }
+        if((atu->info.ld1 == 5) && (atu->info.ld2 == 5)){
+            insert_lde_fim (mesa->mesa, atu->info);
+            break;
+        }
     }
 }
 
