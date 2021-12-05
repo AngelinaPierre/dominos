@@ -70,7 +70,7 @@ void escolha_pecaini(tp_mesa *mesa, tp_player *jog){ //Verificar quina
         atu = jog->hand->ini;
         printf("\nEscolha uma peca: ");
         scanf("%d",&p);
-        for(i = 0; i < p; i++){
+        for(i = 0; i < p-1; i++){
             atu = atu->prox;
         }
         if((atu->info.ld1 == 5) && (atu->info.ld2 == 5)){

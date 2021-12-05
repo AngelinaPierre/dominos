@@ -59,8 +59,23 @@ int main(){
 
     imprime_listade(p1->hand,1);
 
-    escolha_pecaini(m, p1);
-    printf("\n deu certo \n");
+    switch(ordem_jogo(*p1, *p2, *p3, *p4)){
+    	case 1:
+    		escolha_pecaini(m, p1);
+    		break;
+    	case 2:
+    		escolha_pecaini(m, p2);
+    		break;
+    	case 3:
+    		escolha_pecaini(m, p3);
+    		break;
+    	case 4:
+    		escolha_pecaini(m, p4);
+    		break;
+	}
+
+//    escolha_pecaini(m, p1);
+    printf("\n");
     imprime_listade(m->mesa, 1);
 /*
     printf("\n");
