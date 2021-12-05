@@ -52,7 +52,7 @@ void qtd_pecas(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){ //ta
 	jog3 = tamanho_listade(p3->hand);
 	jog4 = tamanho_listade(p4->hand);
 
-	printf("               %s : %d . %s : %d . %s: %d . %s: %d", p1->name, jog1,p2->name, jog2, p3->name, jog3,p4->hand , jog4);
+	printf("%s : %d . %s : %d . %s: %d . %s: %d", p1->name, jog1,p2->name, jog2, p3->name, jog3, p4->name, jog4);
 	printf("\n");
 }
 

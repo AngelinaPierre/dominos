@@ -146,5 +146,24 @@ void escolha_peca(tp_mesa *mesa, tp_player *jog){ //Verificar quina
 	}
 }
 
+void inserir_peca_na_mesa(tp_mesa *m, tp_player *pl){
+    printf("\nPlayer: %s\n", pl->name);
+    imprime_listade(pl->hand,1);
+    printf("\n-------------------------------------\n");
+    imprime_listade(m->mesa, 1);
+    printf("\n-------------------------------------\n");
+    escolha_peca(m, pl);
+}
+
+void verificar_vencedor(tp_player *pl, int *venc){
+    if(empty_lde(pl->hand)){
+        printf("\nParabens %s voce ganhou a partida :)\n", pl->name);
+        system("pause");
+        *venc = 1;
+    } else {
+        *venc = 0;
+    }
+}
+
 
 #endif
