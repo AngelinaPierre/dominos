@@ -4,9 +4,9 @@
  * @brief Biblioteca de lSE para a MÃO do jogador
  * @version 0.1
  * @date 2021-12-02
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #ifndef PEDRA_LDE_M_H
@@ -37,7 +37,7 @@ tp_listade *inicializa_lde(){
     l = (tp_listade *)malloc(sizeof(tp_listade));
     l->ini = NULL;
     l->fim = NULL;
-    printf("\n|LDE_ALOC|\n");
+    // printf("\n|LDE_ALOC|\n");
     return l;
 }
 
@@ -57,6 +57,25 @@ tp_noh *aloca_ndeh(){ // ndeh = no duplamente encadeado mao
     return pt;
 }
 
+// inserindo nó no incio
+int insert_lde_inicio (tp_listade *l, tpi_hand e){
+    tp_noh *novo_no;
+    novo_no = aloca_ndeh();
+    if(!novo_no){
+        return 0;;
+    }
+    novo_no->info = e;
+    if(empty_lde(l)){
+        // primeiro nó
+        l->ini = novo_no;
+        l->fim = novo_no;
+    }else{
+        novo_no->prox = l->ini;
+        l->ini->ant = novo_no;
+        l->ini = novo_no;
+    }
+    return 1;
+}
 
 // inserindo nó no fim
 int insert_lde_fim (tp_listade *l, tpi_hand e){
@@ -117,38 +136,38 @@ int tamanho_listade(tp_listade *l){
 }
 
 // removendo da lista -> com base no conteudo.
-// int remove_listade(tp_listade *l, tpi_hand e){
-//     tp_noh *atu;
-//     atu = l->ini;
-//     while((atu!=NULL) && (atu->info != e)){
-//         atu = atu->prox; // procurando na lista
-//     }
-//     if(atu == NULL){
-//         return 0; // não encontrado
-//     }
-//     if(l->ini == l->fim){
-//         // unico elemento na lista
-//         l->ini = l->fim = NULL;
-//     }else{
-//         if(l->ini == atu){
-//             // 1 elelmento da lista - l=2
-//             l->ini = atu->prox;
-//             atu->prox->ant = NULL;
-//         }else{
-//             if(l->fim == atu){
-//                 // ultimo no da lista
-//                 l->fim = atu->ant;
-//                 atu->ant->prox = NULL;
-//             }else{
-//                 atu->prox->ant = atu->ant;
-//                 atu->ant->prox = atu->prox;
-//             }
-//         }
-//     }
-//     free(atu);
-//     // atu = NULL;
-//     return 1;
-// }
+ int remove_listade(tp_listade *l, tpi_hand e){
+    tp_noh *atu;
+    atu = l->ini;
+    while((atu != NULL) && ((atu->info.ld1 != e.ld1) || (atu->info.ld2 != e.ld2))){
+        atu = atu->prox; // procurando na lista
+     }
+    if(atu == NULL){
+         return 0; // nÃ£o encontrado
+     }
+     if(l->ini == l->fim){
+         // unico elemento na lista
+         l->ini = l->fim = NULL;
+     }else{
+         if(l->ini == atu){
+             // 1 elelmento da lista - l=2
+             l->ini = atu->prox;
+             atu->prox->ant = NULL;
+         }else{
+             if(l->fim == atu){
+                 // ultimo no da lista
+                 l->fim = atu->ant;
+                 atu->ant->prox = NULL;
+             }else{
+                 atu->prox->ant = atu->ant;
+                 atu->ant->prox = atu->prox;
+             }
+         }
+     }
+     free(atu);
+     atu = NULL;
+     return 1;
+}
 
 int busca_lista_pc(tp_listade *lista, int e, int a){
     tp_noh *atu;
@@ -160,7 +179,6 @@ int busca_lista_pc(tp_listade *lista, int e, int a){
     }
     return cont;
 }
-
 
 
 // Retira da memoria todos os nós da lista e também o descritor.
