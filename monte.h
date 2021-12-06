@@ -47,7 +47,7 @@ tp_nop *aloca_no(){
     tp_nop *novo_no;
     novo_no = (tp_nop*)malloc(sizeof(tp_nop));
     if(novo_no==NULL){
-        printf("\n|NO_NA|\n");
+        // printf("\n|NO_NA|\n");
         return 0;
     }
     novo_no->prox = NULL;
