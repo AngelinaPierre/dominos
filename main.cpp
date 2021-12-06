@@ -56,12 +56,24 @@ int main(){
 
     qtd_pecas(p1,p2,p3,p4);
 
-    imprime_listade(p1->hand,1);
-    imprime_listade(p2->hand,1);
-    imprime_listade(p3->hand,1);
-    imprime_listade(p4->hand,1);
+    // imprime_listade(p1->hand,1);
+    // imprime_listade(p2->hand,1);
+    // imprime_listade(p3->hand,1);
+    // imprime_listade(p4->hand,1);
 
-    
+    ordena_pecas(p1);
+    printf("\n\n");
+
+    ordena_pecas(p2);
+    printf("\n\n");
+
+    // ordena_pecas(p2);
+    // printf("\n\n");
+
+    // ordena_pecas(p4);
+    // printf("\n\n");
+
+
 
 
     printf("\n\n[==============|FIM|==============]\n\n");

@@ -162,6 +162,7 @@ int busca_lista_pc(tp_listade *lista, int e, int a){
 }
 
 
+
 // Retira da memoria todos os nós da lista e também o descritor.
 tp_listade *destroi_listade(tp_listade *l){
     tp_noh *atu;
