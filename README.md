@@ -27,17 +27,17 @@ Project for the discipline of Algorithms and Data Structures  1
 
 ![image 3](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/3.jpeg)
 
-![image 4]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/4.jpeg")
+![image 4](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/4.jpeg)
 
-![image 5]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/5.jpeg")
+![image 5](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/5.jpeg)
 
-![image 6]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/6.jpeg")
+![image 6](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/6.jpeg)
 
-![image 7]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/7.jpeg")
+![image 7](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/7.jpeg)
 
-![image 8]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/8.jpeg")
+![image 8](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/8.jpeg)
 
-![image 9]("https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/9.jpeg")
+![image 9](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/9.jpeg)
 
 
 
