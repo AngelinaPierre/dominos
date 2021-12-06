@@ -21,6 +21,24 @@ Project for the discipline of Algorithms and Data Structures  1
    
 
 
+![image 1]("../../Docs/img/1.jpeg")
+ 
+![image 1]("../../Docs/img/2.jpeg")
+
+![image 1]("../../Docs/img/3.jpeg")
+
+![image 1]("../../Docs/img/4.jpeg")
+
+![image 1]("../../Docs/img/5.jpeg")
+
+![image 1]("../../Docs/img/6.jpeg")
+
+![image 1]("../../Docs/img/7.jpeg")
+
+![image 1]("../../Docs/img/8.jpeg")
+
+![image 1]("../../Docs/img/9.jpeg")
+
 
 
 
