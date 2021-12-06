@@ -8,54 +8,89 @@
 #include "player.h"
 
 
-// terminar função para pegar na peca -> fazer com 1 jogador por x
+void insere_ordenado(tp_player *player, tpi_hand peca){
+	tp_noh *novo_no, *atu;
+	int pos = 0;
+    novo_no = aloca_ndeh();
+    novo_no->info = peca;
+    if(empty_lde(player->hand)){
+        // primeiro nó
+        player->hand->ini = novo_no;
+        player->hand->fim = novo_no;
+        novo_no->prox = NULL;
+        novo_no->ant = NULL;
+    }else{
+    	atu = player->hand->ini;
+    	while(soma_peca(peca) >= soma_peca(atu->info) && atu->prox != NULL){
+    		atu = atu->prox;
+    		pos++;
+		}
+		if(atu->prox == NULL && soma_peca(peca) >= soma_peca(atu->info)){
+			novo_no->prox = NULL;
+    		novo_no->ant = atu;
+    		atu->prox = novo_no;
+        	player->hand->fim = novo_no;
+		}else{
+			if(atu->prox == NULL && soma_peca(peca) < soma_peca(atu->info)){
+				novo_no->prox = atu;
+				if(pos == 0){
+					novo_no->ant = NULL;
+				}else{
+					novo_no->ant = atu->ant;
+				}
+				if(pos != 0){
+					atu->ant->prox = novo_no;
+				}
+				atu->ant = novo_no;
+				atu->prox = NULL;
+				player->hand->fim = atu;
+				if(pos == 0){
+					player->hand->ini = novo_no;
+				}
+			}else{
+				if(pos > 0){
+					novo_no->prox = atu;
+					novo_no->ant = atu->ant;
+					atu->ant->prox = novo_no;
+					atu->ant = novo_no;
+				}else{
+					novo_no->prox = atu;
+					novo_no->ant = NULL;
+					atu->ant = novo_no;
+					player->hand->ini = novo_no;
+				}
+			}
+		}
 
-// void pega_pecas(tp_pilha *monte, tp_player *p1,tp_player *p2,tp_player *p3,tp_player *p4){
-// 	// Inserir_na_lista
-// 	int i;
-// 	tp_peca a;
-// 	for(i = 0; i < 7; i++){
-// 		pop(monte, &a);
-// 		insert_lde_fim (p1->hand, a);
-// 	}
-// 	// for(i = 0; i < 7; i++){
-// 	// 	pop(monte, &a);
-// 	// 	insert_lde_fim (p2->hand, a);
-// 	// }
-// 	// for(i = 0; i < 7; i++){
-// 	// 	pop(monte, &a);
-// 	// 	insert_lde_fim (p3->hand, a);
-// 	// }
-// 	// for(i = 0; i < 7; i++){
-// 	// 	pop(monte, &a);
-// 	// 	insert_lde_fim (p4->hand, a);
-// 	// }
-// }
+	}
+}
 
 void pega_pecas(tp_pilha *monte, tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){
 	// Inserir_na_lista
 	int i;
-	tp_peca a, b, c, d;
+	tp_peca a;
 	while(!pilha_vazia(monte)){
         for(i = 0; i < 7; i++){
 		    pop(monte, &a);
             printf("INSERT_P1 -> |%d|%d|\n",a.ld1,a.ld2);
-		    insert_lde_fim (p1->hand, a);
+		    insere_ordenado(p1, a);
+		    imprime_listade(p1->hand, 1);
 	    }
 	    for(i = 0; i < 7; i++){
-		    pop(monte, &b);
-            printf("INSERT_P2 -> |%d|%d|\n",b.ld1,b.ld2);
-		    insert_lde_fim (p2->hand, b);
+		    pop(monte, &a);
+            printf("INSERT_P2 -> |%d|%d|\n",a.ld1,a.ld2);
+		    insere_ordenado(p2, a);
+		    imprime_listade(p2->hand, 1);
 	    }
 	    for(i = 0; i < 7; i++){
-		    pop(monte, &c);
-            printf("INSERT_P3 -> |%d|%d|\n",c.ld1,c.ld2);
-		    insert_lde_fim (p3->hand, c);
+		    pop(monte, &a);
+            printf("INSERT_P3 -> |%d|%d|\n",a.ld1,a.ld2);
+		    insere_ordenado(p3, a);
 	    }
 	    for(i = 0; i < 7; i++){
-		    pop(monte, &d);
-            printf("INSERT_P4 -> |%d|%d|\n",d.ld1,d.ld2);
-		    insert_lde_fim (p4->hand, d);
+		    pop(monte, &a);
+            printf("INSERT_P4 -> |%d|%d|\n",a.ld1,a.ld2);
+		    insere_ordenado(p4, a);
 	    }
     }
 }
