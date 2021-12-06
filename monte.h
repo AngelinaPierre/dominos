@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "peca.h"
 
 
@@ -13,7 +14,7 @@ typedef tp_peca tpi_monte;
 
 /**
  * @brief FUNÇÕES ESTRUTURA DE PILHA IMPLEMENTADA POR LISTA ENCADEDA
- * 
+ *
  */
 
 typedef struct tp_no_aux{
@@ -101,7 +102,7 @@ tp_pilha *destroi(tp_pilha *p){
         pop(p,&e);
     }
     free(p);
-    printf("\n|destruindo pilha|\n");
+    //printf("\n|destruindo pilha|\n");
     return NULL;
 }
 
@@ -126,8 +127,8 @@ void imprime_pilha(tp_pilha p){
 
 /**
  * @brief FUNÇÕES PARA JOGO
- * 
- * @param monte 
+ *
+ * @param monte
  */
 
 void gera_pecas(tp_pilha *monte){

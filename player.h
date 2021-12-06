@@ -21,7 +21,7 @@ tp_player *aloca_player(){
     tp_player *novo_player;
     novo_player = (tp_player *)malloc(sizeof(tp_player));
     if(novo_player == NULL){
-        printf("\n|PLAYER NOT ALLOCATED|\n");
+        //printf("\n|PLAYER NOT ALLOCATED|\n");
     }
     //novo_player->name = (char *)malloc(sizeof(char));
 
@@ -35,9 +35,9 @@ tp_player *inicializa_players(){
     tp_player *p1 = aloca_player();
 
 
-    printf("DIGITE NOME PLAYER: ");
+
     scanf("%[^\n]s",p1->name);
-    printf("\n|PLAYER| = |%s|\n",p1->name);
+    //printf("\n|PLAYER| = |%s|\n",p1->name);
     fflush(stdin);
 
 
@@ -45,17 +45,16 @@ tp_player *inicializa_players(){
 }
 
 void qtd_pecas(tp_player *p1, tp_player *p2, tp_player *p3, tp_player *p4){ //tamanho_lista
-	int jog1, jog2, jog3, jog4;
+    int jog1, jog2, jog3, jog4;
 
-	jog1 = tamanho_listade(p1->hand);
-	jog2 = tamanho_listade(p2->hand);
-	jog3 = tamanho_listade(p3->hand);
-	jog4 = tamanho_listade(p4->hand);
+    jog1 = tamanho_listade(p1->hand);
+    jog2 = tamanho_listade(p2->hand);
+    jog3 = tamanho_listade(p3->hand);
+    jog4 = tamanho_listade(p4->hand);
 
-	printf("%s : %d . %s : %d . %s: %d . %s: %d", p1->name, jog1,p2->name, jog2, p3->name, jog3, p4->name, jog4);
-	printf("\n");
+    printf("Peças de %s : %d\nPeças de %s : %d\nPeças de %s : %d\nPeças de %s : %d", p1->name, jog1,p2->name, jog2, p3->name, jog3, p4->name, jog4);
+    printf("\n");
 }
-
 //criar ordenação da mão por soma
 
 // void ordena_pecas(tp_player *p){

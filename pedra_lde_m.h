@@ -37,7 +37,7 @@ tp_listade *inicializa_lde(){
     l = (tp_listade *)malloc(sizeof(tp_listade));
     l->ini = NULL;
     l->fim = NULL;
-    printf("\n|LDE_ALOC|\n");
+    //printf("\n|LDE_ALOC|\n");
     return l;
 }
 
@@ -190,7 +190,7 @@ tp_listade *destroi_listade(tp_listade *l){
         free(atu);
         atu = l->ini;
     }
-    printf("\n|LDE DESTROYED|\n");
+    //printf("\n|LDE DESTROYED|\n");
     free(l);
     return NULL;
 
