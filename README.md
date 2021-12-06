@@ -21,7 +21,7 @@ Project for the discipline of Algorithms and Data Structures  1
    
 
 
-![image 1](../../Docs/img/1.jpeg?raw=true "Title1")
+![image 1](https://github.com/AngelinaPierre/dominos/blob/main/Docs/img/1.jpeg)
  
 ![image 1](../../Docs/img/2.jpeg')
 
